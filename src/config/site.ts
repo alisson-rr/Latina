@@ -11,6 +11,7 @@ import mobile from "@/assets/cat-mobile.jpg";
 
 export const site = {
   name: "Latina Informática",
+  previewUrl: "https://latina-informatica.vercel.app/",
   legalName: "Latina Informática Ltda.",
   slogan: "A qualidade que você merece",
   cnpj: "08.365.152/0001-08",

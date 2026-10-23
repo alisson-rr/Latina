@@ -4,7 +4,7 @@ import {
   ArrowRight, Cpu, Instagram, Laptop, MapPin, Menu, MessageCircle, MonitorSmartphone,
   Navigation, Network, Phone, ShoppingBag, Store, Wrench, X, Headset, HardDrive,
 } from "lucide-react";
-import logo from "@/assets/latina-logo.png.asset.json";
+import logo from "@/assets/latina-logo.png";
 import hero from "@/assets/hero.jpg";
 import {
   site, nav, services, categories, messages, waLink, mapsUrl, fullAddress,
@@ -20,6 +20,11 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "robots", content: "noindex, nofollow" },
+      { property: "og:url", content: site.previewUrl },
+      { property: "og:image", content: new URL(logo, site.previewUrl).href },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:alt", content: "Latina Informática" },
     ],
   }),
   component: Index,
@@ -36,7 +41,7 @@ function WaIcon({ className = "h-5 w-5" }: { className?: string }) {
 }
 
 function Logo({ className = "" }: { className?: string }) {
-  return <img src={logo.url} alt="Latina Informática – Hardware & Software" width={1920} height={960} className={`h-auto object-contain ${className}`} />;
+  return <img src={logo} alt="Latina Informática – Hardware & Software" width={1920} height={960} className={`h-auto object-contain ${className}`} />;
 }
 
 function Header() {
